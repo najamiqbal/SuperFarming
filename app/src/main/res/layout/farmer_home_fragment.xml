@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:id="@+id/weather_cardview"
+            android:layout_height="180dp"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:id="@+id/weather_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_weather_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:padding="5dp"
+                    android:text="Weather Updates"
+                    android:textColor="#000"
+                    android:textSize="22sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_weather_heading"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="We are alwasy in tuch with you about weather updates click to check the full weal weather news."
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_go_next"
+                    android:padding="5dp"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:id="@+id/service_cardview"
+            android:layout_below="@id/weather_cardview"
+            android:layout_height="180dp"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_service_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:text="Service Providers"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_timer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_service_heading"
+                    android:layout_marginTop="2dp"
+                    android:drawablePadding="10dp"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="Here you can find out all kind of services related to farming."
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_go_next"
+                    android:padding="5dp"
+                    />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:id="@+id/traders_cardview"
+            android:layout_height="180dp"
+            android:layout_margin="8dp"
+            android:layout_below="@id/service_cardview"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_traders_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:padding="5dp"
+                    android:text="Traders"
+                    android:textColor="#000"
+                    android:textSize="22sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_timer2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_traders_heading"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="here is the traders that provide you facilities related to farming."
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_go_next"
+                    android:padding="5dp"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:id="@+id/crops_cardview"
+            android:layout_height="180dp"
+            android:layout_margin="8dp"
+            android:layout_below="@id/traders_cardview"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_diet_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:padding="5dp"
+                    android:text="Crpos Detail"
+                    android:textColor="#000"
+                    android:textSize="22sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_diet_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_diet_title"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="We will update you about all crops detail every season, click to view the list of crops."
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_go_next"
+                    android:padding="5dp"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+</ScrollView>
