@@ -9,7 +9,7 @@
     <item>
 
         <bitmap
-            android:src="@drawable/applogo"
+            android:src="@drawable/agriculture"
             android:gravity="center"/>
 
     </item>

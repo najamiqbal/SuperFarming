@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "360622878215",
+    "firebase_url": "https://super-farming-app.firebaseio.com",
+    "project_id": "super-farming-app",
+    "storage_bucket": "super-farming-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:360622878215:android:d1390bd0eb9866c7",
+        "android_client_info": {
+          "package_name": "com.softsolstudio.superfarming"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "360622878215-7bg2f06tndc4g146kmfr2e7rs3q14t0t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.softsolstudio.superfarming",
+            "certificate_hash": "9ec548ae998b3dbd49dc97ca63a1e0417870bdeb"
+          }
+        },
+        {
+          "client_id": "360622878215-vhds29alhfnoqf7aq313fka0dn02d9kv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDljN4pQNmIddTjr26pD4sxOLOzo3OUB3Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "360622878215-vhds29alhfnoqf7aq313fka0dn02d9kv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

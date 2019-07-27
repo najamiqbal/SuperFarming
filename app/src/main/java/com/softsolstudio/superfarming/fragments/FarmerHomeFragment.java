@@ -53,4 +53,10 @@ public class FarmerHomeFragment extends Fragment implements View.OnClickListener
                 break;
         }
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        getActivity().setTitle("Home");
+        super.onViewCreated(view, savedInstanceState);
+    }
 }

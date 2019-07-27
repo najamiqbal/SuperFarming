@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/trader_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/trader_message"
+            android:icon="@drawable/ic_message_black_24dp"
+            android:title="Messages" />
+        <item
+            android:id="@+id/trader_profile"
+            android:icon="@drawable/ic_account"
+            android:title="My profile" />
+        <item
+            android:id="@+id/trader_services"
+            android:icon="@drawable/ic_details"
+            android:title="My Services" />
+        <item
+            android:id="@+id/trader_weather"
+            android:icon="@drawable/ic_cloud"
+            android:title="Weather" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/trader_nav_about"
+                android:icon="@drawable/ic_about"
+                android:title="About us" />
+            <item
+                android:id="@+id/trader_nav_contact"
+                android:icon="@drawable/ic_contact_us"
+                android:title="contact us" />
+            <item
+                android:id="@+id/trader_logout"
+                android:icon="@drawable/ic_exit_to_app"
+                android:title="Log Out" />
+        </menu>
+    </item>
+
+</menu>
