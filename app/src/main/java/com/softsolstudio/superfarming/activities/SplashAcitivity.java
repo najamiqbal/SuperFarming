@@ -15,19 +15,19 @@ public class SplashAcitivity extends AppCompatActivity {
         UserModelClass userModelClass = SharedPrefManager.getInstance(this).getUser();
         if (userModelClass != null) {
             switch (userModelClass.getUser_type()) {
-                case "0": {
+                case "1": {
                     Intent intent = new Intent(this, MainActivity.class);
                     startActivity(intent);
                     finish();
                     break;
                 }
-                case "2": {
+                case "10": {
                     Intent intent=new Intent(this,TraderMainActivity.class);
                     startActivity(intent);
                     finish();
                     break;
                 }
-                case "3":{
+                case "0":{
                     Intent intent = new Intent(this, ServiceProviderActivity.class);
                     startActivity(intent);
                     finish();

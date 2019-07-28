@@ -17,7 +17,13 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.softsolstudio.superfarming.R;
+import com.softsolstudio.superfarming.fragments.AboutUsFragment;
+import com.softsolstudio.superfarming.fragments.ContactUsFragment;
+import com.softsolstudio.superfarming.fragments.ProviderChatFragment;
 import com.softsolstudio.superfarming.fragments.ProviderHomeFragment;
+import com.softsolstudio.superfarming.fragments.ProviderSerivesFragment;
+import com.softsolstudio.superfarming.fragments.UserProfile;
+import com.softsolstudio.superfarming.fragments.farmerChatFragment;
 import com.softsolstudio.superfarming.models.UserModelClass;
 import com.softsolstudio.superfarming.utils.SharedPrefManager;
 
@@ -77,23 +83,36 @@ public class ServiceProviderActivity extends AppCompatActivity implements Naviga
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
         if (id == R.id.provider_profile) {
-
+            getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            getSupportFragmentManager().beginTransaction().replace(R.id.provider_main_frame,
+                    new UserProfile()).addToBackStack("fragment").commit();
         } else if (id == R.id.provider_home) {
-/*            getSupportFragmentManager().beginTransaction().replace(R.id.saller_main_frame,
-                    new SallerHomeFragment()).commit();*/
+            getSupportFragmentManager().beginTransaction().replace(R.id.provider_main_frame,
+                    new ProviderHomeFragment()).commit();
 
         } else if (id == R.id.provider_message) {
-
+            getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            getSupportFragmentManager().beginTransaction().replace(R.id.provider_main_frame,
+                    new ProviderChatFragment()).addToBackStack("fragment").commit();
 
         } else if (id == R.id.provider_services) {
-
+            getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            getSupportFragmentManager().beginTransaction().replace(R.id.provider_main_frame,
+                    new ProviderSerivesFragment()).addToBackStack("fragment").commit();
         }
         else if (id == R.id.provider_nav_contact) {
+            getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            getSupportFragmentManager().beginTransaction().replace(R.id.provider_main_frame,
+                    new ContactUsFragment()).addToBackStack("fragment").commit();
 
         }else if (id == R.id.provider_nav_about) {
+            getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            getSupportFragmentManager().beginTransaction().replace(R.id.provider_main_frame,
+                    new AboutUsFragment()).addToBackStack("fragment").commit();
 
         }else if (id == R.id.provider_weather) {
-
+            Intent intent=new Intent(ServiceProviderActivity.this, WeatherActivity.class);
+            startActivity(intent);
         }
         else if (id == R.id.provider_logout) {
             SharedPrefManager.getInstance(ServiceProviderActivity.this).logOut();

@@ -43,12 +43,22 @@ public class UserProfile extends Fragment {
         buyer_editProfile_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                UserModelClass userModelClass= SharedPrefManager.getInstance(getContext()).getUser();
+                if (userModelClass!=null){
+                    String userType=userModelClass.getUser_type();
+                    if (TextUtils.equals(userType,"0")){
+                        EditProfileFragment Fragment = new EditProfileFragment();
+                        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.trader_main_frame, Fragment);
+                        fragmentTransaction.addToBackStack("forgetpass_fragment");
+                        fragmentTransaction.commit();
+                    }else if (TextUtils.equals(userType,"1")){
 
-/*                    EditProfileFragment Fragment = new EditProfileFragment();
-                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.user_main_frame, Fragment);
-                    fragmentTransaction.addToBackStack("forgetpass_fragment");
-                    fragmentTransaction.commit();*/
+                    }else if (TextUtils.equals(userType,"")){
+
+                    }
+                }
+
 
 
             }

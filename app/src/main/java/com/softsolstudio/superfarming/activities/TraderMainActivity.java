@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,8 +17,14 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.softsolstudio.superfarming.R;
+import com.softsolstudio.superfarming.fragments.AboutUsFragment;
+import com.softsolstudio.superfarming.fragments.ContactUsFragment;
+import com.softsolstudio.superfarming.fragments.CropsMarketRates;
 import com.softsolstudio.superfarming.fragments.ProviderHomeFragment;
+import com.softsolstudio.superfarming.fragments.TraderChatFragment;
 import com.softsolstudio.superfarming.fragments.TraderHomeFragment;
+import com.softsolstudio.superfarming.fragments.TraderServicesFragment;
+import com.softsolstudio.superfarming.fragments.UserProfile;
 import com.softsolstudio.superfarming.models.UserModelClass;
 import com.softsolstudio.superfarming.utils.SharedPrefManager;
 
@@ -53,14 +60,14 @@ public class TraderMainActivity extends AppCompatActivity implements NavigationV
 
         //I added this if statement to keep the selected fragment when rotating the device
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.provider_main_frame,
+            getSupportFragmentManager().beginTransaction().replace(R.id.trader_main_frame,
                     new TraderHomeFragment()).commit();
         }
     }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.serviceprovider_drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.trader_drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -76,23 +83,35 @@ public class TraderMainActivity extends AppCompatActivity implements NavigationV
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         int id = menuItem.getItemId();
         if (id == R.id.trader_profile) {
-
+            getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            getSupportFragmentManager().beginTransaction().replace(R.id.trader_main_frame,
+                    new UserProfile()).addToBackStack("fragment").commit();
         } else if (id == R.id.trader_home) {
-/*            getSupportFragmentManager().beginTransaction().replace(R.id.saller_main_frame,
-                    new SallerHomeFragment()).commit();*/
+            getSupportFragmentManager().beginTransaction().replace(R.id.trader_main_frame,
+                    new TraderHomeFragment()).commit();
 
         } else if (id == R.id.trader_message) {
-
+            getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            getSupportFragmentManager().beginTransaction().replace(R.id.trader_main_frame,
+                    new TraderChatFragment()).addToBackStack("fragment").commit();
 
         } else if (id == R.id.trader_services) {
-
+            getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            getSupportFragmentManager().beginTransaction().replace(R.id.trader_main_frame,
+                    new TraderServicesFragment()).addToBackStack("fragment").commit();
         }
         else if (id == R.id.trader_nav_contact) {
+            getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            getSupportFragmentManager().beginTransaction().replace(R.id.trader_main_frame,
+                    new ContactUsFragment()).addToBackStack("fragment").commit();
 
         }else if (id == R.id.trader_nav_about) {
-
+            getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            getSupportFragmentManager().beginTransaction().replace(R.id.trader_main_frame,
+                    new AboutUsFragment()).addToBackStack("fragment").commit();
         }else if (id == R.id.trader_weather) {
-
+            Intent intent=new Intent(TraderMainActivity.this, WeatherActivity.class);
+            startActivity(intent);
         }
         else if (id == R.id.trader_logout) {
             SharedPrefManager.getInstance(TraderMainActivity.this).logOut();

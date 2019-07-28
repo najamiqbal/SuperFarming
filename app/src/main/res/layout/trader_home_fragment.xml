@@ -1,10 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
-    android:text="Hello Trader"/>
-</RelativeLayout>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:id="@+id/Tweather_cardview"
+            android:layout_height="170dp"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:id="@+id/Tweather_layout"
+                android:background="@drawable/weatherbg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_weather_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:padding="5dp"
+                    android:text="Weather Updates"
+                    android:textColor="#000"
+                    android:textSize="22sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_weather_heading"
+                    android:gravity="center_vertical"
+                    android:padding="5dp"
+                    android:text="We are alwasy in tuch with you about weather updates click to check the full weal weather news."
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_go_next"
+                    android:padding="5dp"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:id="@+id/TmarketRates_cardview"
+            android:layout_below="@id/Tweather_cardview"
+            android:layout_height="170dp"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/serviceprovider">
+                <TextView
+                    android:id="@+id/tv_service_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:text="Crops Market Rates"
+                    android:textColor="#000"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_timer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_service_heading"
+                    android:layout_marginTop="2dp"
+                    android:drawablePadding="10dp"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="Here you can find out market rates of crops"
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_go_next"
+                    android:padding="5dp"
+                    />
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:id="@+id/Tcrops_cardview"
+            android:layout_height="170dp"
+            android:layout_margin="8dp"
+            android:layout_below="@id/TmarketRates_cardview"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/crops">
+                <TextView
+                    android:id="@+id/tv_diet_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:padding="5dp"
+                    android:text="Crpos Detail"
+                    android:textColor="#000"
+                    android:textSize="22sp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_diet_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_diet_title"
+                    android:padding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="We will update you about all crops detail every season, click to view the list of crops."
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_go_next"
+                    android:padding="5dp"
+                    />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/Taddservice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/fab_margin"
+            android:backgroundTint="@color/colorPrimary"
+            app:srcCompat="@drawable/ic_add_24dp"
+            tools:ignore="VectorDrawableCompat"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</ScrollView>

@@ -10,18 +10,18 @@ import android.view.ViewGroup;
 
 import com.softsolstudio.superfarming.R;
 
-public class ProviderChatFragment extends Fragment {
+public class ProviderSerivesFragment extends Fragment {
     View view;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.provider_chat_fragment,container,false);
+        view=inflater.inflate(R.layout.service_provider_fragment,container,false);
         return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        getActivity().setTitle("Chat List");
+        getActivity().setTitle("My Services");
         super.onViewCreated(view, savedInstanceState);
     }
 }

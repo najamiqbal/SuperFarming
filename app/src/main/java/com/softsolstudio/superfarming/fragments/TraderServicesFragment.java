@@ -10,12 +10,18 @@ import android.view.ViewGroup;
 
 import com.softsolstudio.superfarming.R;
 
-public class TreaderChatFragment extends Fragment {
+public class TraderServicesFragment extends Fragment {
     View view;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.trader_chat_fragment,container,false);
+        view=inflater.inflate(R.layout.trader_services_fragment,container,false);
         return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        getActivity().setTitle("My Services");
+        super.onViewCreated(view, savedInstanceState);
     }
 }

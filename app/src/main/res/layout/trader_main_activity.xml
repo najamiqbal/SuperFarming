@@ -18,6 +18,6 @@
         android:id="@+id/trader_main_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar_provider"/>
+        android:layout_below="@+id/toolbar_trader"/>
 
 </RelativeLayout>
