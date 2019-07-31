@@ -238,7 +238,7 @@ public class VerifyCodeFragment extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                     pDialog.dismiss();
-                    Toast.makeText(getContext(), ""+e.toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "catch "+e.toString(), Toast.LENGTH_SHORT).show();
                 }
             }
         }, new Response.ErrorListener() {

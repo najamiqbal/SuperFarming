@@ -229,6 +229,7 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
             // find the radiobutton by returned id
             RadioButton radioSexButton = (RadioButton) view.findViewById(selectedId);
             buyer_type = radioSexButton.getText().toString();
+            Log.d("Sign Up","User type"+buyer_type);
         }
         if (buyer_image.isEmpty()) {
             Toast.makeText(getContext(), "Please select image", Toast.LENGTH_SHORT).show();

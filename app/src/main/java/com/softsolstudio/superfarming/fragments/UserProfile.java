@@ -46,16 +46,24 @@ public class UserProfile extends Fragment {
                 UserModelClass userModelClass= SharedPrefManager.getInstance(getContext()).getUser();
                 if (userModelClass!=null){
                     String userType=userModelClass.getUser_type();
-                    if (TextUtils.equals(userType,"0")){
+                    if (TextUtils.equals(userType,"Farmer")){
+                        EditProfileFragment Fragment = new EditProfileFragment();
+                        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.main_frame, Fragment);
+                        fragmentTransaction.addToBackStack("forgetpass_fragment");
+                        fragmentTransaction.commit();
+                    }else if (TextUtils.equals(userType,"Trader")){
                         EditProfileFragment Fragment = new EditProfileFragment();
                         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                         fragmentTransaction.replace(R.id.trader_main_frame, Fragment);
                         fragmentTransaction.addToBackStack("forgetpass_fragment");
                         fragmentTransaction.commit();
-                    }else if (TextUtils.equals(userType,"1")){
-
-                    }else if (TextUtils.equals(userType,"")){
-
+                    }else if (TextUtils.equals(userType,"Service provider")){
+                        EditProfileFragment Fragment = new EditProfileFragment();
+                        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.provider_main_frame, Fragment);
+                        fragmentTransaction.addToBackStack("forgetpass_fragment");
+                        fragmentTransaction.commit();
                     }
                 }
 

@@ -47,6 +47,7 @@ public class TraderCategoryAdapter extends RecyclerView.Adapter<TraderCategoryAd
                 Fragment myFragment = new AddNewServiceFragment();
                 Bundle args_data = new Bundle();
                 args_data.putString("Type", model.getType());
+                args_data.putString("SubType", model.getType());
                 myFragment.setArguments(args_data);
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.trader_main_frame, myFragment).addToBackStack(null).commit();
             }

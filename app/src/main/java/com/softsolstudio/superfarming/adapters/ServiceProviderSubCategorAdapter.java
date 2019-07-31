@@ -1,8 +1,11 @@
 package com.softsolstudio.superfarming.adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.softsolstudio.superfarming.R;
+import com.softsolstudio.superfarming.fragments.AddNewServiceFragment;
 import com.softsolstudio.superfarming.models.SubCategoryModel;
 import com.softsolstudio.superfarming.models.categoryModel;
 
@@ -40,12 +44,13 @@ public class ServiceProviderSubCategorAdapter extends RecyclerView.Adapter<Servi
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               /* AppCompatActivity activity = (AppCompatActivity) view.getContext();
+                AppCompatActivity activity = (AppCompatActivity) view.getContext();
                 Fragment myFragment = new AddNewServiceFragment();
                 Bundle args_data = new Bundle();
-                args_data.putString("Type", model.getType());
+                args_data.putString("Type", model.getCategory());
+                args_data.putString("SubType", model.getSubCategory());
                 myFragment.setArguments(args_data);
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.trader_main_frame, myFragment).addToBackStack(null).commit();*/
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.provider_main_frame, myFragment).addToBackStack(null).commit();
             }
         });
     }

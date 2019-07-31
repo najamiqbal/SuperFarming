@@ -25,6 +25,7 @@ import com.softsolstudio.superfarming.fragments.TraderChatFragment;
 import com.softsolstudio.superfarming.fragments.TraderHomeFragment;
 import com.softsolstudio.superfarming.fragments.TraderServicesFragment;
 import com.softsolstudio.superfarming.fragments.UserProfile;
+import com.softsolstudio.superfarming.fragments.UserServicesFragment;
 import com.softsolstudio.superfarming.models.UserModelClass;
 import com.softsolstudio.superfarming.utils.SharedPrefManager;
 
@@ -98,7 +99,7 @@ public class TraderMainActivity extends AppCompatActivity implements NavigationV
         } else if (id == R.id.trader_services) {
             getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
             getSupportFragmentManager().beginTransaction().replace(R.id.trader_main_frame,
-                    new TraderServicesFragment()).addToBackStack("fragment").commit();
+                    new UserServicesFragment()).addToBackStack("fragment").commit();
         }
         else if (id == R.id.trader_nav_contact) {
             getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);

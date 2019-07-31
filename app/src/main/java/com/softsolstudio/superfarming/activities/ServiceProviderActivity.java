@@ -23,6 +23,7 @@ import com.softsolstudio.superfarming.fragments.ProviderChatFragment;
 import com.softsolstudio.superfarming.fragments.ProviderHomeFragment;
 import com.softsolstudio.superfarming.fragments.ProviderSerivesFragment;
 import com.softsolstudio.superfarming.fragments.UserProfile;
+import com.softsolstudio.superfarming.fragments.UserServicesFragment;
 import com.softsolstudio.superfarming.fragments.farmerChatFragment;
 import com.softsolstudio.superfarming.models.UserModelClass;
 import com.softsolstudio.superfarming.utils.SharedPrefManager;
@@ -98,7 +99,7 @@ public class ServiceProviderActivity extends AppCompatActivity implements Naviga
         } else if (id == R.id.provider_services) {
             getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
             getSupportFragmentManager().beginTransaction().replace(R.id.provider_main_frame,
-                    new ProviderSerivesFragment()).addToBackStack("fragment").commit();
+                    new UserServicesFragment()).addToBackStack("fragment").commit();
         }
         else if (id == R.id.provider_nav_contact) {
             getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);

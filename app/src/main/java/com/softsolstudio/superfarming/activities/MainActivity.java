@@ -1,6 +1,7 @@
 package com.softsolstudio.superfarming.activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -83,9 +84,11 @@ public class MainActivity extends AppCompatActivity
                     new farmerChatFragment()).addToBackStack("fragment").commit();
 
         } else if (id == R.id.nav_rate_list) {
-            getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+/*            getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
             getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
-                    new CropsMarketRates()).addToBackStack("fragment").commit();
+                    new CropsMarketRates()).addToBackStack("fragment").commit();*/
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.amis.pk/Reports/DistrictMajor.aspx")));
+
 
         } else if (id == R.id.nav_user_profile) {
             getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
@@ -93,7 +96,7 @@ public class MainActivity extends AppCompatActivity
                     new UserProfile()).addToBackStack("fragment").commit();
 
         } else if (id == R.id.nav_crops_detail) {
-
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://plantix.net/plant-disease/en/")));
         }else if (id == R.id.nav_contact_us) {
             getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
             getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,

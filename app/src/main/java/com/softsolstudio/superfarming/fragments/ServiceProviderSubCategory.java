@@ -31,9 +31,10 @@ public class ServiceProviderSubCategory extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.service_provider_sub_category,container,false);
-        if (getArguments()!=null){
+        Bundle bundl=getArguments();
+        if (bundl!= null){
             service_category=getArguments().getString("Type");
-            Log.d("singin","LOVE"+service_category);
+            Log.d("singin","Category is"+service_category);
         }else {
             Toast.makeText(getActivity(), "Basic info not save", Toast.LENGTH_SHORT).show();
         }
@@ -41,6 +42,7 @@ public class ServiceProviderSubCategory extends Fragment {
         return view;
     }
     private void initialization() {
+        Log.d("singin","Category is"+service_category);
         recyclerView = view.findViewById(R.id.S_sub_recycler_category);
         //LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         GridLayoutManager gridLayoutManager=new GridLayoutManager(getActivity(),2);
@@ -108,13 +110,20 @@ public class ServiceProviderSubCategory extends Fragment {
             fragmentTransaction.replace(R.id.provider_main_frame, Fragment);
             fragmentTransaction.addToBackStack("forgetpass_fragment");
             fragmentTransaction.commit();
+        }else if (service_category==null){
+
+            getFragmentManager().popBackStack();
         }
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         getActivity().setTitle(service_category);
-        service_category="";
         super.onViewCreated(view, savedInstanceState);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        getArguments().clear();
+    }
 }

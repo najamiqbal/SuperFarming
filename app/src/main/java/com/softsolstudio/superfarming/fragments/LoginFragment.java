@@ -113,7 +113,7 @@ public class LoginFragment extends Fragment {
                         //2 is use for saller account
                         if (jsonObject.getString("status").equals("true")){
                             //1 for farmer
-                            if (jsonObject.getString("user_type").equals("0")) {
+                            if (jsonObject.getString("user_type").equals("Farmer")) {
 
                                 userModelClass.setUser_name(jsonObject.getString("username"));
                                 userModelClass.setUser_mobile(jsonObject.getString("mobile"));
@@ -137,7 +137,7 @@ public class LoginFragment extends Fragment {
 
                             }
                             //2 is use for trader account
-                            else if (jsonObject.getString("user_type").equals("2")){
+                            else if (jsonObject.getString("user_type").equals("Service provider")){
 
                                 userModelClass.setUser_name(jsonObject.getString("username"));
                                 userModelClass.setUser_mobile(jsonObject.getString("mobile"));
@@ -160,7 +160,7 @@ public class LoginFragment extends Fragment {
                                 }
                             }
                             //3 for service provider
-                            else if (jsonObject.getString("user_type").equals("3")){
+                            else if (jsonObject.getString("user_type").equals("Trader")){
 
                                 userModelClass.setUser_name(jsonObject.getString("username"));
                                 userModelClass.setUser_mobile(jsonObject.getString("mobile"));
