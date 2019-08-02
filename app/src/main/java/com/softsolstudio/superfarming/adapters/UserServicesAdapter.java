@@ -79,7 +79,8 @@ public class UserServicesAdapter extends RecyclerView.Adapter<UserServicesAdapte
                         Fragment myFragment = new UserServiceViewFragment();
                         Bundle args_data = new Bundle();
                         args_data.putString("service_id", model.getService_id());
-                        args_data.putString("service_title", model.getSub_category());
+                        args_data.putString("service_category", model.getService_category());
+                        args_data.putString("service_sub", model.getSub_category());
                         args_data.putString("service_desc", model.getDescription());
                         args_data.putString("service_price", model.getPrice());
                         args_data.putString("service_image", model.getService_image());

@@ -106,4 +106,7 @@
     <style name="AppTheme.PopupOverlay.Black" parent="ThemeOverlay.AppCompat">
         <item name="android:colorBackground">@color/blackTheme_colorBackground</item>
     </style>
+    <style name="MenuStyle" parent="Theme.AppCompat.Light">
+        <item name="android:background">@android:color/white</item>
+    </style>
 </resources>
