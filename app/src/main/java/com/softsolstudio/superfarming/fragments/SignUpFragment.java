@@ -51,6 +51,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SignUpFragment extends Fragment implements View.OnClickListener{
     View view;
@@ -239,10 +241,26 @@ public class SignUpFragment extends Fragment implements View.OnClickListener{
             Toast.makeText(getContext(), "Please select user type", Toast.LENGTH_SHORT).show();
             valid = false;
         }
-
+        if (!isValidPassword(buyer_password)) {
+            et_password_buyer.setError("Please Enter Correct Password");
+            valid = false;
+        } else {
+            et_password_buyer.setError(null);
+        }
         return valid;
     }
+    //*****************************************************************
+    public static boolean isValidPassword(final String password) {
 
+        Pattern pattern;
+        Matcher matcher;
+        final String PASSWORD_PATTERN = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+])[A-Za-z\\d][A-Za-z\\d!@#$%^&*()_+]{7,19}$";
+        pattern = Pattern.compile(PASSWORD_PATTERN);
+        matcher = pattern.matcher(password);
+
+        return matcher.matches();
+
+    }
     public String getStringImage(Bitmap bmp) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bmp.compress(Bitmap.CompressFormat.JPEG, 10, baos);

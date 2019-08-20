@@ -28,6 +28,8 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ResetPassFragment extends Fragment {
     View view;
@@ -56,14 +58,31 @@ public class ResetPassFragment extends Fragment {
         update_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!NewPass.getText().toString().isEmpty() && !ConfirmPass.getText().toString().isEmpty() && !mobile.isEmpty()){
-                    if (NewPass.getText().toString().equals(ConfirmPass.getText().toString())){
-                        updatePass(NewPass.getText().toString().trim(),mobile);
+                if (isValidPassword(NewPass.getText().toString())) {
+                    if (!NewPass.getText().toString().isEmpty() && !ConfirmPass.getText().toString().isEmpty() && !mobile.isEmpty()) {
+                        if (NewPass.getText().toString().equals(ConfirmPass.getText().toString())) {
+                            updatePass(NewPass.getText().toString().trim(), mobile);
+                        }
                     }
+                }else {
+                    NewPass.setError("Enter Strong Password");
+
                 }
             }
         });
 
+
+    }
+    //*****************************************************************
+    public static boolean isValidPassword(final String password) {
+
+        Pattern pattern;
+        Matcher matcher;
+        final String PASSWORD_PATTERN = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+])[A-Za-z\\d][A-Za-z\\d!@#$%^&*()_+]{7,19}$";
+        pattern = Pattern.compile(PASSWORD_PATTERN);
+        matcher = pattern.matcher(password);
+
+        return matcher.matches();
 
     }
     private void updatePass(final String password, final String mobile) {

@@ -1,5 +1,6 @@
 package com.softsolstudio.superfarming.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.softsolstudio.superfarming.R;
+import com.softsolstudio.superfarming.activities.MessageActivity;
 
 public class FarmerServiceVeiwFragment extends Fragment {
     View view;
@@ -53,7 +55,9 @@ public class FarmerServiceVeiwFragment extends Fragment {
         start_btn_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getContext(), MessageActivity.class);
+                intent.putExtra("userid", userFirebade);
+                startActivity(intent);
             }
         });
         tv_Usermobile.setText(userMobile);

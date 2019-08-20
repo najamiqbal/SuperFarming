@@ -91,7 +91,9 @@ public class EditUserServiceFragment extends Fragment implements View.OnClickLis
         service_sub_title.setText(serviceSubCategory);
         service_price.setText(servicePrice);
         service_desc.setText(serviceDesc);
-        Glide.with(getContext()).load(servicePhoto).dontAnimate().fitCenter().placeholder(R.drawable.applogo).into(service_image);
+        if (bitmap==null){
+            //Glide.with(getContext()).load(servicePhoto).dontAnimate().fitCenter().into(service_image);
+        }
         upload_new_image.setOnClickListener(this);
         update_service_btn.setOnClickListener(this);
         service_image.setOnClickListener(this);
@@ -118,7 +120,7 @@ public class EditUserServiceFragment extends Fragment implements View.OnClickLis
     private void EditService(final String userId, final String serviceId, final String servcieCategory, final String serviceSubCategory, final String serviceDesc, final String servicePrice, final String servicePhoto) {
         pDialog.setMessage("please Wait....");
         pDialog.show();
-        Log.d("Response is", "CHECK RESPONSE" + serviceId);
+        Log.d("Response is", "CHECK RESPONSE before" + servicePhoto);
         StringRequest stringRequest = new StringRequest(Request.Method.POST,updateService, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -254,6 +256,59 @@ public class EditUserServiceFragment extends Fragment implements View.OnClickLis
         }
     }
 
+
+    //Validating data
+    private boolean validate() {
+        boolean valid = true;
+        serviceSubCategory = service_sub_title.getText().toString();
+        serviceDesc = service_desc.getText().toString();
+        servicePrice = service_price.getText().toString();
+        UserModelClass userModelClass = SharedPrefManager.getInstance(getContext()).getUser();
+        userId = userModelClass.getUser_id();
+        if (bitmap != null) {
+            Log.d("IMG", "not null is" + bitmap);
+            servicePhoto="";
+            servicePhoto = getStringImage(bitmap);
+            Log.d("IMG", "THIS is image if" + servicePhoto);
+        } else {
+           // servicePhoto = userModelClass.getUser_photo();
+            Log.d("IMG", "THIS is image else" + servicePhoto);
+        }
+
+        Log.d("IMG", "THIS is image" + servicePhoto);
+
+        if (serviceSubCategory.isEmpty()) {
+            service_sub_title.setError("Plaese enter title");
+            valid = false;
+        } else {
+            service_sub_title.setError(null);
+        }
+        if (userId.isEmpty()) {
+            Toast.makeText(getContext(), "Error reload the activity", Toast.LENGTH_SHORT).show();
+            valid = false;
+        }
+        if (serviceDesc.isEmpty()) {
+            service_desc.setError("Pleaase enter description");
+            valid = false;
+        } else {
+            service_desc.setError(null);
+        }
+        if (servicePrice.isEmpty()) {
+            service_price.setError("Please enter price");
+            valid = false;
+        } else {
+            service_price.setError(null);
+        }
+        return valid;
+    }
+
+    public String getStringImage(Bitmap bitmap) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 10, baos);
+        byte[] imageBytes = baos.toByteArray();
+        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        return encodedImage;
+    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -266,7 +321,6 @@ public class EditUserServiceFragment extends Fragment implements View.OnClickLis
                     bitmap = (Bitmap) extras.get("data");
                     // bitmap = AppUtils.getResizedBitmap(bitmap, 100);
                     //bitmap = MediaStore.Images.Media.getBitmap(getActivity().getApplicationContext().getContentResolver(), data.getData());
-                    Log.d("PHOTO", "YES" + bitmap);
                     service_image.setImageBitmap(bitmap);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -276,11 +330,11 @@ public class EditUserServiceFragment extends Fragment implements View.OnClickLis
             if (requestCode == RESULT_LOAD_IMAGE && null != data) {
 
                 try {
-                    bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), data.getData());
+                    bitmap = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(), data.getData());
                     //           bitmap = AppUtils.getResizedBitmap(bitmap, 100);
                     Log.d("PHOTO", "YES" + bitmap);
                     service_image.setImageBitmap(bitmap);
-                    ;
+
                     //remove_pic.setVisibility(View.VISIBLE);
                 } catch (final IOException e) {
 
@@ -316,54 +370,5 @@ public class EditUserServiceFragment extends Fragment implements View.OnClickLis
                 }
                 break;
         }
-    }
-
-    //Validating data
-    private boolean validate() {
-        boolean valid = true;
-        serviceSubCategory = service_sub_title.getText().toString();
-        serviceDesc = service_desc.getText().toString();
-        servicePrice = service_price.getText().toString();
-        UserModelClass userModelClass = SharedPrefManager.getInstance(getContext()).getUser();
-        userId = userModelClass.getUser_id();
-        if (bitmap != null) {
-            servicePhoto = getStringImage(bitmap);
-        } else {
-            servicePhoto = userModelClass.getUser_photo();
-        }
-
-        Log.d("IMG", "THIS is image" + servicePhoto);
-
-        if (serviceSubCategory.isEmpty()) {
-            service_sub_title.setError("Plaese enter title");
-            valid = false;
-        } else {
-            service_sub_title.setError(null);
-        }
-        if (userId.isEmpty()) {
-            Toast.makeText(getContext(), "Error reload the activity", Toast.LENGTH_SHORT).show();
-            valid = false;
-        }
-        if (serviceDesc.isEmpty()) {
-            service_desc.setError("Pleaase enter description");
-            valid = false;
-        } else {
-            service_desc.setError(null);
-        }
-        if (servicePrice.isEmpty()) {
-            service_price.setError("Please enter price");
-            valid = false;
-        } else {
-            service_price.setError(null);
-        }
-        return valid;
-    }
-
-    public String getStringImage(Bitmap bmp) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bmp.compress(Bitmap.CompressFormat.JPEG, 10, baos);
-        byte[] imageBytes = baos.toByteArray();
-        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
-        return encodedImage;
     }
 }

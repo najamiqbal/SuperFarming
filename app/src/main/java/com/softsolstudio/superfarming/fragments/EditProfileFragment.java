@@ -44,6 +44,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class EditProfileFragment extends Fragment implements View.OnClickListener{
     View view;
@@ -372,9 +374,27 @@ public class EditProfileFragment extends Fragment implements View.OnClickListene
         }else {
             new_pass.setError(null);
         }
+        if (!isValidPassword(edit_user_newPass)) {
+            new_pass.setError("Please Enter Correct Password");
+            valid = false;
+        } else {
+            new_pass.setError(null);
+        }
         return valid;
     }
 
+    //*****************************************************************
+    public static boolean isValidPassword(final String password) {
+
+        Pattern pattern;
+        Matcher matcher;
+        final String PASSWORD_PATTERN = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[!@#$%^&*()_+])[A-Za-z\\d][A-Za-z\\d!@#$%^&*()_+]{7,19}$";
+        pattern = Pattern.compile(PASSWORD_PATTERN);
+        matcher = pattern.matcher(password);
+
+        return matcher.matches();
+
+    }
     public String getStringImage(Bitmap bmp) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bmp.compress(Bitmap.CompressFormat.JPEG, 10, baos);
