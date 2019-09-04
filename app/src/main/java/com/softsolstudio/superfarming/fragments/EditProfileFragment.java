@@ -50,7 +50,7 @@ import java.util.regex.Pattern;
 public class EditProfileFragment extends Fragment implements View.OnClickListener{
     View view;
     private static final int RESULT_LOAD_IMAGE = 2;
-    String updateProfile = "http://jugnoosinternational.com/android-api/Api.php?action=UpdateProfile";
+    String updateProfile = "https://houseofsoftwares.com/android-api-2/Api.php?action=UpdateProfile";
     static final int REQUEST_IMAGE_CAPTURE = 7;
     Boolean imgClicked = false;
     Bitmap bitmap;

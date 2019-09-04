@@ -55,7 +55,7 @@ public class AddNewServiceFragment extends Fragment implements View.OnClickListe
     TextView uploadImage;
     Button add_btn;
     private static final int RESULT_LOAD_IMAGE = 2;
-    String addService = "http://jugnoosinternational.com/android-api/Api.php?action=addService";
+    String addService = "https://houseofsoftwares.com/android-api-2/Api.php?action=addService";
     static final int REQUEST_IMAGE_CAPTURE = 7;
     Boolean imgClicked = false;
     Bitmap bitmap;

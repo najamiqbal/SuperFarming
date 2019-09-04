@@ -44,7 +44,7 @@ public class ForgetPassFragment extends Fragment {
     Button submit;
     TextView backtologin;
     private ProgressDialog pDialog;
-    String Isexist_url = "http://jugnoosinternational.com/android-api/Api.php?action=isUserExist";
+    String Isexist_url = "https://houseofsoftwares.com/android-api-2/Api.php?action=isUserExist";
     private String mVerificationId;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;

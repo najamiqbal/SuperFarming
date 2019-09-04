@@ -48,7 +48,7 @@ public class LoginFragment extends Fragment {
     View view;
     UserModelClass userModelClass = new UserModelClass();
     private ProgressDialog pDialog;
-    String Login_url = "http://jugnoosinternational.com/android-api/Api.php?action=loginUser";
+    String Login_url = "https://houseofsoftwares.com/android-api-2/Api.php?action=loginUser";
     Button loginbtn,loginbtn_guest;
     TextView forgetpass, registration;
     EditText mobile, pass;

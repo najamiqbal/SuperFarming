@@ -51,7 +51,7 @@ public class VerifyCodeFragment extends Fragment {
     int count = 120;
     String verificationId, firebaseUserId = "", buyer_mobile = "", buyer_Name = "", buyer_Status = "", buyer_Password = "", buyer_Email = "", buyer_Address = "", buyer_Photo = "", saller_comapany_name = "", saller_comp_address = "", saller_comp_ntn = "",
             saller_comp_desc = "";
-    String registration_url = "http://jugnoosinternational.com/android-api/Api.php?action=registerUser";
+    String registration_url = "https://houseofsoftwares.com/android-api-2/Api.php?action=registerUser";
     private PhoneAuthProvider.ForceResendingToken mResendToken;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
     private FirebaseAuth mAuth;

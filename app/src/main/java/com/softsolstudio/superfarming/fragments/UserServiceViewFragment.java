@@ -41,7 +41,7 @@ public class UserServiceViewFragment extends Fragment implements View.OnClickLis
     ImageView service_image;
     Button editService_btn, deleteService_btn;
     String userId = "", serviceTitle = "", serviceCategory = "", serviceDesc = "", servicePrice = "", serviceImage = "", serviceId = "";
-    String deleteService = "http://jugnoosinternational.com/android-api/Api.php?action=deleteService";
+    String deleteService = "https://houseofsoftwares.com/android-api-2/Api.php?action=deleteService";
     private ProgressDialog pDialog;
     @Nullable
     @Override

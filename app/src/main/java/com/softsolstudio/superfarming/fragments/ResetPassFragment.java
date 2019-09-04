@@ -37,7 +37,7 @@ public class ResetPassFragment extends Fragment {
     Button update_btn;
     private ProgressDialog pDialog;
     String mobile="";
-    String resetPass_url = "http://jugnoosinternational.com/android-api/Api.php?action=forgetPassword";
+    String resetPass_url = "https://houseofsoftwares.com/android-api-2/Api.php?action=forgetPassword";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

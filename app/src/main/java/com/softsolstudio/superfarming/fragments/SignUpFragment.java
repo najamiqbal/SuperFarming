@@ -57,7 +57,7 @@ import java.util.regex.Pattern;
 public class SignUpFragment extends Fragment implements View.OnClickListener{
     View view;
     private static final int RESULT_LOAD_IMAGE = 2;
-    String IsUserExist = "http://jugnoosinternational.com/android-api/Api.php?action=isUserExist";
+    String IsUserExist = "https://houseofsoftwares.com/android-api-2/Api.php?action=isUserExist";
     static final int REQUEST_IMAGE_CAPTURE = 7;
     Boolean imgClicked = false;
     Bitmap bitmap;

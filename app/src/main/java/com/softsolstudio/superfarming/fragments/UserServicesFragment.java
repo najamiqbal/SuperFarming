@@ -67,17 +67,17 @@ public class UserServicesFragment extends Fragment {
         //if (!Usertype_value.isEmpty()){
             if (TextUtils.equals(Usertype_value,"Service provider")){
                 Usertype_key="user_type";
-                getUserPostsUrl="http://jugnoosinternational.com/android-api/Api.php?action=getServices";
+                getUserPostsUrl="https://houseofsoftwares.com/android-api-2/Api.php?action=getServices";
                 GetUserServices(Usertype_value,Usertype_key,getUserPostsUrl);
             }else if (TextUtils.equals(Usertype_value,"Trader")){
                 Usertype_key="user_type";
-                getUserPostsUrl="http://jugnoosinternational.com/android-api/Api.php?action=getServices";
+                getUserPostsUrl="https://houseofsoftwares.com/android-api-2/Api.php?action=getServices";
                 GetUserServices(Usertype_value,Usertype_key,getUserPostsUrl);
             }else {
                 UserModelClass userModelClass= SharedPrefManager.getInstance(getContext()).getUser();
                 if (userModelClass!=null){
                     Usertype_key="user_id";
-                    getUserPostsUrl="http://jugnoosinternational.com/android-api/Api.php?action=getUserServices";
+                    getUserPostsUrl="https://houseofsoftwares.com/android-api-2/Api.php?action=getUserServices";
                     GetUserServices(userModelClass.getUser_id(),Usertype_key,getUserPostsUrl);
                 }
             }
