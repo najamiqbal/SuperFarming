@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "360622878215-dn8ttbal4a76ro5k6u8k4pvfo5collo6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.softsolstudio.superfarming",
+            "certificate_hash": "c7b4070ca53b42d9aa8d4ef1bea40838a8bd91e5"
+          }
+        },
+        {
           "client_id": "360622878215-7bg2f06tndc4g146kmfr2e7rs3q14t0t.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

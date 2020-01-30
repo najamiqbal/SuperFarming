@@ -16,7 +16,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.softsolstudio.superfarming.R;
 import com.softsolstudio.superfarming.fragments.AboutUsFragment;
 import com.softsolstudio.superfarming.fragments.ContactUsFragment;
@@ -24,11 +27,13 @@ import com.softsolstudio.superfarming.fragments.CropsMarketRates;
 import com.softsolstudio.superfarming.fragments.FarmerHomeFragment;
 import com.softsolstudio.superfarming.fragments.UserProfile;
 import com.softsolstudio.superfarming.fragments.farmerChatFragment;
+import com.softsolstudio.superfarming.models.UserModelClass;
 import com.softsolstudio.superfarming.utils.SharedPrefManager;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    TextView ownername, ownermail;
+    ImageView userPhoto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +49,15 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
         this.showFragment(savedInstanceState);
+        ownername = navigationView.getHeaderView(0).findViewById(R.id.farmerName);
+        ownermail = navigationView.getHeaderView(0).findViewById(R.id.farmerEmail);
+        userPhoto = navigationView.getHeaderView(0).findViewById(R.id.imageViewfarmer);
+        final UserModelClass userModelClass = SharedPrefManager.getInstance(MainActivity.this).getUser();
+        if (userModelClass != null) {
+            ownername.setText(userModelClass.getUser_name());
+            ownermail.setText(userModelClass.getUser_email());
+            Glide.with(MainActivity.this).load(userModelClass.getUser_photo()).dontAnimate().fitCenter().placeholder(R.drawable.ic_profile_pic).into(userPhoto);
+        }
 
     }
     private void showFragment(Bundle savedInstanceState) {
