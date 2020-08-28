@@ -1,50 +1,42 @@
 {
   "project_info": {
-    "project_number": "360622878215",
-    "firebase_url": "https://super-farming-app.firebaseio.com",
-    "project_id": "super-farming-app",
-    "storage_bucket": "super-farming-app.appspot.com"
+    "project_number": "18955614325",
+    "firebase_url": "https://farmar-trader.firebaseio.com",
+    "project_id": "farmar-trader",
+    "storage_bucket": "farmar-trader.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:360622878215:android:d1390bd0eb9866c7",
+        "mobilesdk_app_id": "1:18955614325:android:4a0b948b97ca1ca444203c",
         "android_client_info": {
-          "package_name": "com.softsolstudio.superfarming"
+          "package_name": "com.softsolstudio.farmertrader"
         }
       },
       "oauth_client": [
         {
-          "client_id": "360622878215-dn8ttbal4a76ro5k6u8k4pvfo5collo6.apps.googleusercontent.com",
+          "client_id": "18955614325-0gdmfjf7fq5r9t7bcacvh7adn35sc7pu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.softsolstudio.superfarming",
-            "certificate_hash": "c7b4070ca53b42d9aa8d4ef1bea40838a8bd91e5"
+            "package_name": "com.softsolstudio.farmertrader",
+            "certificate_hash": "03241adddda57ae703d4a0c397f5cd22780d8e80"
           }
         },
         {
-          "client_id": "360622878215-7bg2f06tndc4g146kmfr2e7rs3q14t0t.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.softsolstudio.superfarming",
-            "certificate_hash": "9ec548ae998b3dbd49dc97ca63a1e0417870bdeb"
-          }
-        },
-        {
-          "client_id": "360622878215-vhds29alhfnoqf7aq313fka0dn02d9kv.apps.googleusercontent.com",
+          "client_id": "18955614325-iv7nge9i3v3c5ijnehpq8su05up5d2n4.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDljN4pQNmIddTjr26pD4sxOLOzo3OUB3Q"
+          "current_key": "AIzaSyB-erVOl8WSgbTtUornNKkVDydkc02p8v0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "360622878215-vhds29alhfnoqf7aq313fka0dn02d9kv.apps.googleusercontent.com",
+              "client_id": "18955614325-iv7nge9i3v3c5ijnehpq8su05up5d2n4.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

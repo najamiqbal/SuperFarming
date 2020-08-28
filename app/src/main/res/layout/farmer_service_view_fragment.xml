@@ -135,13 +135,13 @@
             android:orientation="horizontal"
             android:layout_margin="10dp"
             android:layout_below="@id/linea_3">
-            <Button
+        <!--    <Button
                 android:id="@+id/startChat_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_style"
                 android:text="Start Chat"
-                android:textColor="#ffff"/>
+                android:textColor="#ffff"/>-->
         </LinearLayout>
     </RelativeLayout>
 </ScrollView>
