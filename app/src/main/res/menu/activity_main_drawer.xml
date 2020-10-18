@@ -8,14 +8,14 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
             android:title="@string/menu_home" />
-  <!--      <item
+        <item
             android:id="@+id/nav_weather"
             android:icon="@drawable/ic_cloud"
             android:title="Weather" />
         <item
             android:id="@+id/nav_chat"
             android:icon="@drawable/ic_message_black_24dp"
-            android:title="Message" />-->
+            android:title="Message" />
         <item
             android:id="@+id/nav_crops_detail"
             android:icon="@drawable/ic_details"

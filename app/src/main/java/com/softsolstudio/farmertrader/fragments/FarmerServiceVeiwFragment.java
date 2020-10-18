@@ -51,7 +51,7 @@ public class FarmerServiceVeiwFragment extends Fragment {
         service_image=view.findViewById(R.id.n_iv_itemPic);
         tv_UserAddress=view.findViewById(R.id.n_tv_useraddress);
         tv_Usermobile=view.findViewById(R.id.n_tv_userMobile);
-     /*   start_btn_chat=view.findViewById(R.id.startChat_btn);
+        start_btn_chat=view.findViewById(R.id.startChat_btn);
         start_btn_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +59,7 @@ public class FarmerServiceVeiwFragment extends Fragment {
                 intent.putExtra("userid", userFirebade);
                 startActivity(intent);
             }
-        });*/
+        });
         tv_Usermobile.setText(userMobile);
         tv_Username.setText(userName);
         tv_UserAddress.setText(userAddress);

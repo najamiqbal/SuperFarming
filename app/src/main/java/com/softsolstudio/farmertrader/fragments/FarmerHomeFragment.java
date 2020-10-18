@@ -27,12 +27,12 @@ public class FarmerHomeFragment extends Fragment implements View.OnClickListener
     }
 
     private void initialization() {
-        //weather_card=view.findViewById(R.id.weather_cardview);
-        //service_card=view.findViewById(R.id.service_cardview);
+        weather_card=view.findViewById(R.id.weather_cardview);
+        service_card=view.findViewById(R.id.service_cardview);
         traders_card=view.findViewById(R.id.traders_cardview);
         crops_detail=view.findViewById(R.id.crops_cardview);
-        //weather_card.setOnClickListener(this);
-        //service_card.setOnClickListener(this);
+        weather_card.setOnClickListener(this);
+        service_card.setOnClickListener(this);
         traders_card.setOnClickListener(this);
         crops_detail.setOnClickListener(this);
     }
@@ -40,7 +40,7 @@ public class FarmerHomeFragment extends Fragment implements View.OnClickListener
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-         /*   case R.id.weather_cardview:
+            case R.id.weather_cardview:
                 Intent intent=new Intent(getContext(), WeatherActivity.class);
                 startActivity(intent);
                 break;
@@ -53,7 +53,7 @@ public class FarmerHomeFragment extends Fragment implements View.OnClickListener
                 fragmentTransaction.replace(R.id.main_frame, Fragment);
                 fragmentTransaction.addToBackStack("forgetpass_fragment");
                 fragmentTransaction.commit();
-                break;*/
+                break;
             case R.id.traders_cardview:
                 UserServicesFragment Fragment2 = new UserServicesFragment();
                 Bundle argsdata = new Bundle();

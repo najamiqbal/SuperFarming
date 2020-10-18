@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity
                     .commit();
             // Handle the camera action
         }
-/*        else if (id == R.id.nav_weather) {
+        else if (id == R.id.nav_weather) {
             Intent intent=new Intent(MainActivity.this, WeatherActivity.class);
             startActivity(intent);
 
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
                     new farmerChatFragment()).addToBackStack("fragment").commit();
 
-        } */
+        }
         else if (id == R.id.nav_rate_list) {
 /*            getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
             getSupportFragmentManager().beginTransaction().replace(R.id.main_frame,
